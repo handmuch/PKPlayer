@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D7277515206C82210078CB44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7277514206C82210078CB44 /* AppDelegate.m */; };
-		D7277518206C82210078CB44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7277517206C82210078CB44 /* ViewController.m */; };
 		D727751D206C82210078CB44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D727751C206C82210078CB44 /* Assets.xcassets */; };
 		D7277520206C82210078CB44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D727751E206C82210078CB44 /* LaunchScreen.storyboard */; };
 		D7277523206C82210078CB44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7277522206C82210078CB44 /* main.m */; };
@@ -37,6 +36,8 @@
 		D7277580206E239D0078CB44 /* PKNotificationDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = D727757F206E239D0078CB44 /* PKNotificationDefine.m */; };
 		D72775842071C3280078CB44 /* PKFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72775832071C3280078CB44 /* PKFileModel.m */; };
 		D72775872072583A0078CB44 /* PKFIlePictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72775862072583A0078CB44 /* PKFIlePictureModel.m */; };
+		D7FC717C209758FF000AA2A5 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FC717B209758FF000AA2A5 /* libmp3lame.a */; };
+		D7FC718020975939000AA2A5 /* mp3_encoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7FC717E20975939000AA2A5 /* mp3_encoder.cpp */; };
 		F827FCE656B8C227A1BD3F77 /* libPods-PKPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0CB9E7FD36F660C9B4C893 /* libPods-PKPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +65,6 @@
 		D7277510206C82210078CB44 /* PKPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PKPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7277513206C82210078CB44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7277514206C82210078CB44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D7277516206C82210078CB44 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D7277517206C82210078CB44 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D727751C206C82210078CB44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D727751F206C82210078CB44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7277521206C82210078CB44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +107,10 @@
 		D72775832071C3280078CB44 /* PKFileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFileModel.m; sourceTree = "<group>"; };
 		D72775852072583A0078CB44 /* PKFIlePictureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFIlePictureModel.h; sourceTree = "<group>"; };
 		D72775862072583A0078CB44 /* PKFIlePictureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFIlePictureModel.m; sourceTree = "<group>"; };
+		D7FC717B209758FF000AA2A5 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		D7FC717D2097591B000AA2A5 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		D7FC717E20975939000AA2A5 /* mp3_encoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mp3_encoder.cpp; sourceTree = "<group>"; };
+		D7FC717F20975939000AA2A5 /* mp3_encoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mp3_encoder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 				D7277566206C8B4D0078CB44 /* libstdc++.tbd in Frameworks */,
 				D7277564206C8B3F0078CB44 /* libc++.tbd in Frameworks */,
 				D7277562206C8AF20078CB44 /* VideoToolbox.framework in Frameworks */,
+				D7FC717C209758FF000AA2A5 /* libmp3lame.a in Frameworks */,
 				D7277560206C8AE70078CB44 /* UIKit.framework in Frameworks */,
 				D727755E206C8ADC0078CB44 /* QuartzCore.framework in Frameworks */,
 				D727755C206C8ACF0078CB44 /* OpenGLES.framework in Frameworks */,
@@ -185,6 +189,7 @@
 		D7277512206C82210078CB44 /* PKPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				D7FC7178209758CB000AA2A5 /* common */,
 				D727757C206E1E0D0078CB44 /* config */,
 				D7277578206E10660078CB44 /* service */,
 				D7277573206DDE920078CB44 /* models */,
@@ -192,8 +197,6 @@
 				D7277545206C82340078CB44 /* openSource */,
 				D7277513206C82210078CB44 /* AppDelegate.h */,
 				D7277514206C82210078CB44 /* AppDelegate.m */,
-				D7277516206C82210078CB44 /* ViewController.h */,
-				D7277517206C82210078CB44 /* ViewController.m */,
 				D727751C206C82210078CB44 /* Assets.xcassets */,
 				D727751E206C82210078CB44 /* LaunchScreen.storyboard */,
 				D7277521206C82210078CB44 /* Info.plist */,
@@ -224,6 +227,7 @@
 		D7277545206C82340078CB44 /* openSource */ = {
 			isa = PBXGroup;
 			children = (
+				D7FC717A209758F5000AA2A5 /* lame */,
 			);
 			path = openSource;
 			sourceTree = "<group>";
@@ -319,6 +323,48 @@
 			path = "基础";
 			sourceTree = "<group>";
 		};
+		D7FC7178209758CB000AA2A5 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC7179209758D8000AA2A5 /* mp3 */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		D7FC7179209758D8000AA2A5 /* mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC717E20975939000AA2A5 /* mp3_encoder.cpp */,
+				D7FC717F20975939000AA2A5 /* mp3_encoder.h */,
+			);
+			path = mp3;
+			sourceTree = "<group>";
+		};
+		D7FC717A209758F5000AA2A5 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC71822098A4A2000AA2A5 /* lib */,
+				D7FC71812098A471000AA2A5 /* include */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
+		D7FC71812098A471000AA2A5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC717D2097591B000AA2A5 /* lame.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		D7FC71822098A4A2000AA2A5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC717B209758FF000AA2A5 /* libmp3lame.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,7 +428,7 @@
 		D7277508206C82210078CB44 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = PeterKwok;
 				TargetAttributes = {
 					D727750F206C82210078CB44 = {
@@ -473,7 +519,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7277518206C82210078CB44 /* ViewController.m in Sources */,
 				D727757B206E10BC0078CB44 /* PKiTunesScanService.m in Sources */,
 				D72775872072583A0078CB44 /* PKFIlePictureModel.m in Sources */,
 				D72775842071C3280078CB44 /* PKFileModel.m in Sources */,
@@ -481,6 +526,7 @@
 				D727756A206CEE9B0078CB44 /* PKBaseViewController.m in Sources */,
 				D7277580206E239D0078CB44 /* PKNotificationDefine.m in Sources */,
 				D7277577206E0E0C0078CB44 /* PKLocalFileViewController.m in Sources */,
+				D7FC718020975939000AA2A5 /* mp3_encoder.cpp in Sources */,
 				D7277515206C82210078CB44 /* AppDelegate.m in Sources */,
 				D7277571206D28140078CB44 /* PKMainViewTableViewCell.m in Sources */,
 				D727756E206D03290078CB44 /* PKMainViewController.m in Sources */,
@@ -544,6 +590,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -551,6 +598,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -599,6 +647,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -606,6 +655,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -647,8 +697,22 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PKPlayer/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/PINCache\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/PKPlayer/openSource/lame/include",
+				);
 				INFOPLIST_FILE = PKPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PKPlayer/openSource/lame/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "handmuch-icloud.com.PKPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -668,8 +732,22 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PKPlayer/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/PINCache\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/PKPlayer/openSource/lame/include",
+				);
 				INFOPLIST_FILE = PKPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PKPlayer/openSource/lame/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "handmuch-icloud.com.PKPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

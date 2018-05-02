@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view.
     self.title = @"本地文件";
     [self getFile];
+
     [[PKiTunesScanService sharedInstance] starScaniTunesDocumentsAsynchronous];
     
      [[NSNotificationCenter defaultCenter] addObserver:self
@@ -30,6 +31,10 @@
 
 - (void)getFile {
 
+    NSArray <NSString *> *fileArray = [[PKiTunesScanService sharedInstance] scanDocumentsFileList];
+    for (NSString *fileName in fileArray) {
+        
+    }
 }
 
 - (void)fileChanageAction:(NSNotification *)notification
