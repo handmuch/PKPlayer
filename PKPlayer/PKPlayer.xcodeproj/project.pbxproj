@@ -32,10 +32,12 @@
 		D727756E206D03290078CB44 /* PKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D727756D206D03290078CB44 /* PKMainViewController.m */; };
 		D7277571206D28140078CB44 /* PKMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7277570206D28140078CB44 /* PKMainViewTableViewCell.m */; };
 		D7277577206E0E0C0078CB44 /* PKLocalFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7277576206E0E0C0078CB44 /* PKLocalFileViewController.m */; };
-		D727757B206E10BC0078CB44 /* PKiTunesScanService.m in Sources */ = {isa = PBXBuildFile; fileRef = D727757A206E10BC0078CB44 /* PKiTunesScanService.m */; };
 		D7277580206E239D0078CB44 /* PKNotificationDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = D727757F206E239D0078CB44 /* PKNotificationDefine.m */; };
 		D72775842071C3280078CB44 /* PKFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72775832071C3280078CB44 /* PKFileModel.m */; };
-		D72775872072583A0078CB44 /* PKFIlePictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72775862072583A0078CB44 /* PKFIlePictureModel.m */; };
+		D7BC9198209C8E47008044AE /* PKLocalFIleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BC9197209C8E47008044AE /* PKLocalFIleCollectionViewCell.m */; };
+		D7BC919B20A17D5F008044AE /* PKFilePhotoSourceService.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BC919A20A17D5F008044AE /* PKFilePhotoSourceService.m */; };
+		D7BC919F20A2A3D2008044AE /* PKImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BC919E20A2A3D2008044AE /* PKImageCoder.m */; };
+		D7BC91B120A5700C008044AE /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BC91B020A5700C008044AE /* WebP.framework */; };
 		D7FC717C209758FF000AA2A5 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FC717B209758FF000AA2A5 /* libmp3lame.a */; };
 		D7FC718020975939000AA2A5 /* mp3_encoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7FC717E20975939000AA2A5 /* mp3_encoder.cpp */; };
 		F827FCE656B8C227A1BD3F77 /* libPods-PKPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0CB9E7FD36F660C9B4C893 /* libPods-PKPlayer.a */; };
@@ -99,14 +101,17 @@
 		D7277572206DD99C0078CB44 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D7277575206E0E0C0078CB44 /* PKLocalFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKLocalFileViewController.h; sourceTree = "<group>"; };
 		D7277576206E0E0C0078CB44 /* PKLocalFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKLocalFileViewController.m; sourceTree = "<group>"; };
-		D7277579206E10BC0078CB44 /* PKiTunesScanService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKiTunesScanService.h; sourceTree = "<group>"; };
-		D727757A206E10BC0078CB44 /* PKiTunesScanService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKiTunesScanService.m; sourceTree = "<group>"; };
 		D727757E206E239D0078CB44 /* PKNotificationDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKNotificationDefine.h; sourceTree = "<group>"; };
 		D727757F206E239D0078CB44 /* PKNotificationDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKNotificationDefine.m; sourceTree = "<group>"; };
 		D72775822071C3280078CB44 /* PKFileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFileModel.h; sourceTree = "<group>"; };
 		D72775832071C3280078CB44 /* PKFileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFileModel.m; sourceTree = "<group>"; };
-		D72775852072583A0078CB44 /* PKFIlePictureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFIlePictureModel.h; sourceTree = "<group>"; };
-		D72775862072583A0078CB44 /* PKFIlePictureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFIlePictureModel.m; sourceTree = "<group>"; };
+		D7BC9196209C8E47008044AE /* PKLocalFIleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKLocalFIleCollectionViewCell.h; sourceTree = "<group>"; };
+		D7BC9197209C8E47008044AE /* PKLocalFIleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKLocalFIleCollectionViewCell.m; sourceTree = "<group>"; };
+		D7BC919920A17D5F008044AE /* PKFilePhotoSourceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFilePhotoSourceService.h; sourceTree = "<group>"; };
+		D7BC919A20A17D5F008044AE /* PKFilePhotoSourceService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFilePhotoSourceService.m; sourceTree = "<group>"; };
+		D7BC919D20A2A3D2008044AE /* PKImageCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKImageCoder.h; sourceTree = "<group>"; };
+		D7BC919E20A2A3D2008044AE /* PKImageCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKImageCoder.m; sourceTree = "<group>"; };
+		D7BC91B020A5700C008044AE /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
 		D7FC717B209758FF000AA2A5 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		D7FC717D2097591B000AA2A5 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		D7FC717E20975939000AA2A5 /* mp3_encoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mp3_encoder.cpp; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 				D7FC717C209758FF000AA2A5 /* libmp3lame.a in Frameworks */,
 				D7277560206C8AE70078CB44 /* UIKit.framework in Frameworks */,
 				D727755E206C8ADC0078CB44 /* QuartzCore.framework in Frameworks */,
+				D7BC91B120A5700C008044AE /* WebP.framework in Frameworks */,
 				D727755C206C8ACF0078CB44 /* OpenGLES.framework in Frameworks */,
 				D727755A206C8AC40078CB44 /* MobileCoreServices.framework in Frameworks */,
 				D7277558206C8AB80078CB44 /* MediaPlayer.framework in Frameworks */,
@@ -227,6 +233,7 @@
 		D7277545206C82340078CB44 /* openSource */ = {
 			isa = PBXGroup;
 			children = (
+				D7BC91AF20A56FE9008044AE /* webp */,
 				D7FC717A209758F5000AA2A5 /* lame */,
 			);
 			path = openSource;
@@ -281,8 +288,6 @@
 			children = (
 				D72775822071C3280078CB44 /* PKFileModel.h */,
 				D72775832071C3280078CB44 /* PKFileModel.m */,
-				D72775852072583A0078CB44 /* PKFIlePictureModel.h */,
-				D72775862072583A0078CB44 /* PKFIlePictureModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -292,6 +297,8 @@
 			children = (
 				D7277575206E0E0C0078CB44 /* PKLocalFileViewController.h */,
 				D7277576206E0E0C0078CB44 /* PKLocalFileViewController.m */,
+				D7BC9196209C8E47008044AE /* PKLocalFIleCollectionViewCell.h */,
+				D7BC9197209C8E47008044AE /* PKLocalFIleCollectionViewCell.m */,
 			);
 			path = "本地文件";
 			sourceTree = "<group>";
@@ -299,8 +306,8 @@
 		D7277578206E10660078CB44 /* service */ = {
 			isa = PBXGroup;
 			children = (
-				D7277579206E10BC0078CB44 /* PKiTunesScanService.h */,
-				D727757A206E10BC0078CB44 /* PKiTunesScanService.m */,
+				D7BC919920A17D5F008044AE /* PKFilePhotoSourceService.h */,
+				D7BC919A20A17D5F008044AE /* PKFilePhotoSourceService.m */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -323,9 +330,27 @@
 			path = "基础";
 			sourceTree = "<group>";
 		};
+		D7BC919C20A2A289008044AE /* image */ = {
+			isa = PBXGroup;
+			children = (
+				D7BC919D20A2A3D2008044AE /* PKImageCoder.h */,
+				D7BC919E20A2A3D2008044AE /* PKImageCoder.m */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		D7BC91AF20A56FE9008044AE /* webp */ = {
+			isa = PBXGroup;
+			children = (
+				D7BC91B020A5700C008044AE /* WebP.framework */,
+			);
+			path = webp;
+			sourceTree = "<group>";
+		};
 		D7FC7178209758CB000AA2A5 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				D7BC919C20A2A289008044AE /* image */,
 				D7FC7179209758D8000AA2A5 /* mp3 */,
 			);
 			path = common;
@@ -519,15 +544,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D727757B206E10BC0078CB44 /* PKiTunesScanService.m in Sources */,
-				D72775872072583A0078CB44 /* PKFIlePictureModel.m in Sources */,
 				D72775842071C3280078CB44 /* PKFileModel.m in Sources */,
+				D7BC9198209C8E47008044AE /* PKLocalFIleCollectionViewCell.m in Sources */,
 				D7277523206C82210078CB44 /* main.m in Sources */,
 				D727756A206CEE9B0078CB44 /* PKBaseViewController.m in Sources */,
 				D7277580206E239D0078CB44 /* PKNotificationDefine.m in Sources */,
 				D7277577206E0E0C0078CB44 /* PKLocalFileViewController.m in Sources */,
 				D7FC718020975939000AA2A5 /* mp3_encoder.cpp in Sources */,
 				D7277515206C82210078CB44 /* AppDelegate.m in Sources */,
+				D7BC919F20A2A3D2008044AE /* PKImageCoder.m in Sources */,
+				D7BC919B20A17D5F008044AE /* PKFilePhotoSourceService.m in Sources */,
 				D7277571206D28140078CB44 /* PKMainViewTableViewCell.m in Sources */,
 				D727756E206D03290078CB44 /* PKMainViewController.m in Sources */,
 			);
@@ -694,6 +720,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PKPlayer/openSource",
+					"$(PROJECT_DIR)/PKPlayer/openSource/webp",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PKPlayer/PrefixHeader.pch";
@@ -729,6 +756,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PKPlayer/openSource",
+					"$(PROJECT_DIR)/PKPlayer/openSource/webp",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PKPlayer/PrefixHeader.pch";
