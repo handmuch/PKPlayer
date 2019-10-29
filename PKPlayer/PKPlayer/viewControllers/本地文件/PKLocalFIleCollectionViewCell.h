@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PKFileModel.h"
 
-@interface PKLocalFIleCollectionViewCell : UICollectionViewCell
+static NSString *PKLocalFileCollectionViewCellIndentifier = @"PKLocalFileCollectionViewCellIndentifier";
+
+@interface PKLocalFileCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) PKFileModel *file;
+
++ (CGSize)localFileCollectionViewCellSize;
 
 @end

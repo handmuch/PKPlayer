@@ -8,5 +8,7 @@ pod 'PINCache'
 pod 'SDWebImage'
 pod 'FMDB'
 pod 'YYImage'
+pod 'libextobjc'
+
 
 end

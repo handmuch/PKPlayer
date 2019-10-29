@@ -7,11 +7,27 @@
 //
 
 #import "PKLocalFileViewController.h"
-#import "PKiTunesScanService.h"
 
-@interface PKLocalFileViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+//views
+#import "PKLocalFileCollectionViewCell.h"
+#import "PKSpectrumView.h"
+
+//services
+#import "PKiTunesScanService.h"
+#import "PKAudioWaveDisplayPlayer.h"
+//models
+#import "PKFileModel.h"
+
+#define ARRAY_SIZE(x) (sizeof(x)/sizeof((x)[0]))
+
+@interface PKLocalFileViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, PKAudioSpectrumPlayerDelegate>
 
 @property (nonatomic, strong) UICollectionView *fileCollectionView;
+@property (nonatomic, strong) PKSpectrumView *spectrumView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
+@property (nonatomic, strong) PKAudioWaveDisplayPlayer *audioPlayer;
+
 
 @end
 
@@ -30,21 +46,43 @@
                                                 object:nil];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    CGFloat barSpace = self.spectrumView.frame.size.width / (CGFloat)(self.audioPlayer.analyzer.frequencyBands * 3 - 1);
+    self.spectrumView.barWidth = barSpace * 2;
+    self.spectrumView.space = barSpace;
+}
+
 #pragma mark - private method
 
 - (void)setupUI {
     
+    if (@available(iOS 11.0, *)) {
+        self.fileCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:self.spectrumView];
+    [self.spectrumView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(64);
+        make.left.right.equalTo(self.view).offset(0);
+        make.height.mas_equalTo(150);
+    }];
+    
     [self.view addSubview:self.fileCollectionView];
     [self.fileCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.edges.mas_equalTo(UIEdgeInsetsMake(214, 0, 0, 0));
     }];
 }
 
 - (void)getFile {
 
     [[PKiTunesScanService sharedInstance] starScaniTunesDocumentsAsynchronous];
-    NSArray <NSString *> *fileArray = [[PKiTunesScanService sharedInstance] scanDocumentsFileList];
-    NSLog(@"%@",fileArray);
+    NSArray <PKFileModel *> *fileArray = [[PKiTunesScanService sharedInstance] scanDocumentsFileList];
+    self.dataSource = [NSMutableArray arrayWithArray:fileArray];
+    [self.fileCollectionView reloadData];
 }
 
 - (void)fileChanageAction:(NSNotification *)notification
@@ -57,7 +95,6 @@
     NSError *error;
     // 获取指定路径对应文件夹下的所有文件
     NSArray <NSString *> *fileArray = [fileManager contentsOfDirectoryAtPath:filePath error:&error];
-    NSLog(@"%@", fileArray);
 }
 
 - (void)dealloc
@@ -72,6 +109,44 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - collectionView dataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    PKLocalFileCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PKLocalFileCollectionViewCellIndentifier forIndexPath:indexPath];
+    cell.file = [self.dataSource objectAtIndex:indexPath.item];
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return [PKLocalFileCollectionViewCell localFileCollectionViewCellSize];
+}
+
+#pragma mark - UICollection delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    PKFileModel *file = [self.dataSource objectAtIndex:indexPath.item];
+    [self.audioPlayer playWithFilePath:file.filePath];
+}
+
+#pragma mark - PKAudioSpectrumPlayerDelegate
+
+- (void)player:(PKAudioWaveDisplayPlayer *)player didGenerateSpectrum:(NSMutableArray *)specturm {
+    @autoreleasepool {
+//        NSLog(@"%@",specturm);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.spectrumView.speatra = specturm;
+        });
+    }
+}
+
 #pragma mark - lazyInit
 
 - (UICollectionView *)fileCollectionView {
@@ -80,9 +155,8 @@
         //定义每个UICollectionView 横向的间距
         flowLayout.minimumLineSpacing = 12;
         //定义每个UICollectionView 纵向的间距
-        flowLayout.minimumInteritemSpacing = 0;
-        flowLayout.itemSize = CGSizeMake(112, 188);
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 12, 0, 12);
+        flowLayout.minimumInteritemSpacing = 12;
+        flowLayout.sectionInset = UIEdgeInsetsZero;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
         _fileCollectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
@@ -91,9 +165,27 @@
         _fileCollectionView.backgroundColor = [UIColor clearColor];
         _fileCollectionView.delegate = self;
         _fileCollectionView.dataSource = self;
+        
+        [_fileCollectionView registerClass:[PKLocalFileCollectionViewCell class]
+                forCellWithReuseIdentifier:PKLocalFileCollectionViewCellIndentifier];
     }
     
     return _fileCollectionView;
+}
+
+- (PKAudioWaveDisplayPlayer *)audioPlayer {
+    if (!_audioPlayer) {
+        _audioPlayer = [[PKAudioWaveDisplayPlayer alloc]init];
+        _audioPlayer.delegate = self;
+    }
+    return _audioPlayer;
+}
+
+- (PKSpectrumView *)spectrumView {
+    if (!_spectrumView) {
+        _spectrumView = [[PKSpectrumView alloc]initWithFrame:CGRectZero];
+    }
+    return _spectrumView;
 }
 
 @end

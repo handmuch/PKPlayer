@@ -8,6 +8,28 @@
 
 #import "PKFileModel.h"
 
+@implementation PKFileImageModel
+
+@end
+
 @implementation PKFileModel
+
++ (UIImage *)contentImageWithFileModel:(PKFileModel *)file {
+    UIImage *image = nil;
+    switch ((NSInteger)file.fileReadType) {
+        case PKLocalFileReadTypeUnknow:
+            image = [UIImage imageNamed:@"local_file_unknow.png"];
+            break;
+        case PKLocalFileReadTypePhoto:
+            image = [UIImage imageWithContentsOfFile:file.filePath];
+            break;
+        case PKLocalFileReadTypeDocument:
+            image = [UIImage imageNamed:@"local_file_txt"];
+            break;
+        default:
+            break;
+    }
+    return image;
+}
 
 @end

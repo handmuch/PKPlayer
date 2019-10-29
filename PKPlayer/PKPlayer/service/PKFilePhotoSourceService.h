@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PKFileModel.h"
+
 @interface PKFilePhotoSourceService : NSObject
 
 + (instancetype)sharedInstance;
+
+- (PKFileImageModel *)photoFileModelWithImagePath:(NSString *)imagePath;
 
 @end

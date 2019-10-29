@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PKImageCoder.h"
+#import <YYImage/YYImage.h>
 
 typedef NS_ENUM(NSInteger, PKLocalFileReadType) {
     PKLocalFileReadTypeUnknow = 0,
@@ -17,19 +17,29 @@ typedef NS_ENUM(NSInteger, PKLocalFileReadType) {
     PKLocalFileReadTypeVideo,
 };
 
+@interface PKFileImageModel : NSObject
+
+@property (nonatomic, assign) YYImageType imageType;
+@property (nonatomic, assign) CGFloat imageHeight;
+@property (nonatomic, assign) CGFloat imageWidth;
+@property (nonatomic, assign) NSTimeInterval animateDuration;
+
+@end
+
 @interface PKFileModel : NSObject
 
 @property (nonatomic, copy) NSString *fileName;
-@property (nonatomic, assign) NSInteger fileReadType;
+@property (nonatomic, assign) PKLocalFileReadType fileReadType;
 @property (nonatomic, assign) NSString *extName;
-@property (nonatomic, assign) double fileSize;
+@property (nonatomic, assign) long long fileSize;
 @property (nonatomic, copy) NSString *filePath;
-@property (nonatomic, assign) double addDateTime;
-@property (nonatomic, assign) double recentlyReadTime;
+@property (nonatomic, assign) double createDateTime;
+@property (nonatomic, assign) double modifyDateTime;
 
-#pragma mark - image property
+#pragma mark - image
 
-@property (nonatomic, strong)
-@property (nonatomic, assign) PKLocalFileImageType imageType;
+@property (nonatomic, strong) PKFileImageModel *imageModel;
+
++ (UIImage *)contentImageWithFileModel:(PKFileModel *)file;
 
 @end
