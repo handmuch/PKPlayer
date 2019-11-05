@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PKMainViewController.h"
+#import <FlexLib/FlexLib.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //flex预览
+    FlexRestorePreviewSetting();
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     PKMainViewController *mainVC = [[PKMainViewController alloc] init];

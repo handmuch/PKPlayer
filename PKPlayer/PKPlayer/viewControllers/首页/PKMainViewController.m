@@ -8,6 +8,8 @@
 
 #import "PKMainViewController.h"
 #import "PKLocalFileViewController.h"
+#import "PKFlexMainViewController.h"
+#import "PKFrameViewController.h"
 
 #import "PKMainViewTableViewCell.h"
 
@@ -36,8 +38,8 @@ static NSString *pkMainViewTableViewCellIndentifier = @"pkMainViewTableViewCellI
 
 - (void)initData {
     
-    self.mainImageNameArray = @[@"mian_local_image.png"];
-    self.mainTitleArray = @[@"本地文件"];
+    self.mainImageNameArray = @[@"main_local_file", @"main_local_image",  @"main_local_phone"];
+    self.mainTitleArray = @[@"本地文件", @"照片库", @"我的手机（测试）"];
     [self.menuTableView reloadData];
 }
 
@@ -81,6 +83,14 @@ static NSString *pkMainViewTableViewCellIndentifier = @"pkMainViewTableViewCellI
     if (indexPath.row == 0) {
         PKLocalFileViewController *localFileViewController = [[PKLocalFileViewController alloc]init];
         [self.navigationController pushViewController:localFileViewController animated:YES];
+    }
+    if (indexPath.row == 1) {
+        PKFrameViewController *frameViewController = [[PKFrameViewController alloc] init];
+        [self.navigationController pushViewController:frameViewController animated:YES];
+    }
+    if (indexPath.row == 2) {
+        PKFlexMainViewController *felxMainViewController = [[PKFlexMainViewController alloc]init];
+        [self.navigationController pushViewController:felxMainViewController animated:YES];
     }
 }
 

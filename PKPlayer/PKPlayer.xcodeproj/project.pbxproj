@@ -50,6 +50,11 @@
 		D7BC91B120A5700C008044AE /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BC91B020A5700C008044AE /* WebP.framework */; };
 		D7BC91B620A9396E008044AE /* PKiTunesScanService.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BC91B420A9396E008044AE /* PKiTunesScanService.m */; };
 		D7BC91B920A94322008044AE /* PKFileDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BC91B820A94322008044AE /* PKFileDefine.m */; };
+		D7D7CA7C236FFC6700AEA417 /* PKFlexMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D7CA7B236FFC6700AEA417 /* PKFlexMainViewController.m */; };
+		D7D7CA842371516200AEA417 /* PKFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D7CA832371516200AEA417 /* PKFrameViewController.m */; };
+		D7D7CA86237151A400AEA417 /* FrameVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D7D7CA85237151A400AEA417 /* FrameVC.xml */; };
+		D7D7CA88237154D900AEA417 /* system.style in Resources */ = {isa = PBXBuildFile; fileRef = D7D7CA87237154D900AEA417 /* system.style */; };
+		D7D7CA8E237158AA00AEA417 /* PKFlexMainViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D7D7CA8D237158A900AEA417 /* PKFlexMainViewController.xml */; };
 		D7DD095422169B1F0020FECC /* PKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DD095322169B1F0020FECC /* PKUtilities.m */; };
 		D7FC717C209758FF000AA2A5 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FC717B209758FF000AA2A5 /* libmp3lame.a */; };
 		D7FC718020975939000AA2A5 /* mp3_encoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7FC717E20975939000AA2A5 /* mp3_encoder.cpp */; };
@@ -251,6 +256,13 @@
 		D7BC91B520A9396E008044AE /* PKiTunesScanService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKiTunesScanService.h; sourceTree = "<group>"; };
 		D7BC91B720A94322008044AE /* PKFileDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFileDefine.h; sourceTree = "<group>"; };
 		D7BC91B820A94322008044AE /* PKFileDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFileDefine.m; sourceTree = "<group>"; };
+		D7D7CA7A236FFC6700AEA417 /* PKFlexMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFlexMainViewController.h; sourceTree = "<group>"; };
+		D7D7CA7B236FFC6700AEA417 /* PKFlexMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFlexMainViewController.m; sourceTree = "<group>"; };
+		D7D7CA822371516200AEA417 /* PKFrameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFrameViewController.h; sourceTree = "<group>"; };
+		D7D7CA832371516200AEA417 /* PKFrameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFrameViewController.m; sourceTree = "<group>"; };
+		D7D7CA85237151A400AEA417 /* FrameVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FrameVC.xml; sourceTree = "<group>"; };
+		D7D7CA87237154D900AEA417 /* system.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = system.style; sourceTree = "<group>"; };
+		D7D7CA8D237158A900AEA417 /* PKFlexMainViewController.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PKFlexMainViewController.xml; sourceTree = "<group>"; };
 		D7DD095222169B1F0020FECC /* PKUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKUtilities.h; sourceTree = "<group>"; };
 		D7DD095322169B1F0020FECC /* PKUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKUtilities.m; sourceTree = "<group>"; };
 		D7FC717B209758FF000AA2A5 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
@@ -349,6 +361,7 @@
 				D7277573206DDE920078CB44 /* models */,
 				D7277567206CEC920078CB44 /* viewControllers */,
 				D7277545206C82340078CB44 /* openSource */,
+				D7D7CA8123714F2C00AEA417 /* res */,
 				D7277513206C82210078CB44 /* AppDelegate.h */,
 				D7277514206C82210078CB44 /* AppDelegate.m */,
 				D727751C206C82210078CB44 /* Assets.xcassets */,
@@ -427,6 +440,10 @@
 			children = (
 				D727756C206D03290078CB44 /* PKMainViewController.h */,
 				D727756D206D03290078CB44 /* PKMainViewController.m */,
+				D7D7CA7A236FFC6700AEA417 /* PKFlexMainViewController.h */,
+				D7D7CA7B236FFC6700AEA417 /* PKFlexMainViewController.m */,
+				D7D7CA822371516200AEA417 /* PKFrameViewController.h */,
+				D7D7CA832371516200AEA417 /* PKFrameViewController.m */,
 				D727756F206D28140078CB44 /* PKMainViewTableViewCell.h */,
 				D7277570206D28140078CB44 /* PKMainViewTableViewCell.m */,
 			);
@@ -711,6 +728,16 @@
 			path = webp;
 			sourceTree = "<group>";
 		};
+		D7D7CA8123714F2C00AEA417 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				D7D7CA85237151A400AEA417 /* FrameVC.xml */,
+				D7D7CA8D237158A900AEA417 /* PKFlexMainViewController.xml */,
+				D7D7CA87237154D900AEA417 /* system.style */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
 		D7DD09512215814F0020FECC /* category */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +800,7 @@
 				D727750C206C82210078CB44 /* Sources */,
 				D727750D206C82210078CB44 /* Frameworks */,
 				D727750E206C82210078CB44 /* Resources */,
+				32F42C591B8E464A2C507C44 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -869,6 +897,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D7CA88237154D900AEA417 /* system.style in Resources */,
+				D7D7CA86237151A400AEA417 /* FrameVC.xml in Resources */,
+				D7D7CA8E237158AA00AEA417 /* PKFlexMainViewController.xml in Resources */,
 				D7277520206C82210078CB44 /* LaunchScreen.storyboard in Resources */,
 				D727751D206C82210078CB44 /* Assets.xcassets in Resources */,
 			);
@@ -909,6 +940,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		32F42C591B8E464A2C507C44 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PKPlayer/Pods-PKPlayer-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLib.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FlexLib.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PKPlayer/Pods-PKPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -924,8 +973,10 @@
 				D727756A206CEE9B0078CB44 /* PKBaseViewController.m in Sources */,
 				D731C2C7228908EC007FC473 /* PKSpectrumView.m in Sources */,
 				D7277580206E239D0078CB44 /* PKNotificationDefine.m in Sources */,
+				D7D7CA7C236FFC6700AEA417 /* PKFlexMainViewController.m in Sources */,
 				D7277577206E0E0C0078CB44 /* PKLocalFileViewController.m in Sources */,
 				D7FC718020975939000AA2A5 /* mp3_encoder.cpp in Sources */,
+				D7D7CA842371516200AEA417 /* PKFrameViewController.m in Sources */,
 				D70CD20E2227BED20088257C /* PKAudioWaveDisplayPlayer.mm in Sources */,
 				D7277515206C82210078CB44 /* AppDelegate.m in Sources */,
 				D7BC919F20A2A3D2008044AE /* PKImageCoder.m in Sources */,
