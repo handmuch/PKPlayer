@@ -68,6 +68,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]init];
         _titleLabel.textAlignment = NSTextAlignmentLeft;
+        _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         _titleLabel.font = [UIFont systemFontOfSize:14.0f];
         _titleLabel.textColor = [UIColor blackColor];
     }

@@ -28,6 +28,9 @@
 
 @property (nonatomic, strong) PKAudioWaveDisplayPlayer *audioPlayer;
 
+@property (nonatomic, strong) UIImpactFeedbackGenerator *generator;
+@property (nonatomic, assign) NSInteger count;
+
 
 @end
 
@@ -37,6 +40,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"本地文件";
+    self.count = 0;
     [self setupUI];
     [self getFile];
     
@@ -140,9 +144,23 @@
 
 - (void)player:(PKAudioWaveDisplayPlayer *)player didGenerateSpectrum:(NSMutableArray *)specturm {
     @autoreleasepool {
-//        NSLog(@"%@",specturm);
         dispatch_async(dispatch_get_main_queue(), ^{
             self.spectrumView.speatra = specturm;
+            NSArray *spectraLeft = specturm.firstObject;
+            CGFloat amplitude = [[spectraLeft objectAtIndex:0] floatValue];
+            if (specturm.count >= 2) {
+                NSArray *spectraRight = [specturm objectAtIndex:1];
+                amplitude += [[spectraRight objectAtIndex:0] floatValue];
+                amplitude = amplitude/2;
+            }
+            self.count++;
+            if (@available(iOS 13.0, *)) {
+                CGFloat realAmplitude = amplitude*1.7;
+                if (realAmplitude < 0.4) {
+                    return;
+                }
+                [self.generator impactOccurredWithIntensity:realAmplitude];
+            }
         });
     }
 }
@@ -186,6 +204,13 @@
         _spectrumView = [[PKSpectrumView alloc]initWithFrame:CGRectZero];
     }
     return _spectrumView;
+}
+
+- (UIImpactFeedbackGenerator *)generator {
+    if (!_generator) {
+        _generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
+    }
+    return _generator;
 }
 
 @end
