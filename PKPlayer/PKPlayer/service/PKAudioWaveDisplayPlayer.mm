@@ -46,10 +46,14 @@
             return;
         }
         buffer.frameLength = (AVAudioFrameCount)bufferSize;
-        NSMutableArray *amplitudes = [strongSelf.analyzer analyseWithBuffer:buffer];
-        if (strongSelf.delegate && [strongSelf.delegate respondsToSelector:@selector(player:didGenerateSpectrum:)]) {
-            [strongSelf.delegate player:strongSelf didGenerateSpectrum:amplitudes];
-        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSMutableArray *amplitudes = [strongSelf.analyzer analyseWithBuffer:buffer];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (strongSelf.delegate && [strongSelf.delegate respondsToSelector:@selector(player:didGenerateSpectrum:)]) {
+                    [strongSelf.delegate player:strongSelf didGenerateSpectrum:amplitudes];
+                }
+            });
+        });
     }];
 }
 

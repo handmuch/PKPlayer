@@ -11,6 +11,8 @@
 #define PK_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define PK_SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
+static NSString *const PKPlayerErrorDomain = @"com.pkPlayer.ErrorDomain";
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PKUtilities : NSObject

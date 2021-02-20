@@ -10,6 +10,8 @@
 #import "PKLocalFileViewController.h"
 #import "PKFlexMainViewController.h"
 #import "PKFrameViewController.h"
+#import "PKRecordViewController.h"
+#import "AudioExportViewController.h"
 
 #import "PKMainViewTableViewCell.h"
 
@@ -38,8 +40,8 @@ static NSString *pkMainViewTableViewCellIndentifier = @"pkMainViewTableViewCellI
 
 - (void)initData {
     
-    self.mainImageNameArray = @[@"main_local_file", @"main_local_image",  @"main_local_phone"];
-    self.mainTitleArray = @[@"本地文件", @"照片库", @"我的手机（测试）"];
+    self.mainImageNameArray = @[@"main_local_file", @"main_local_image",  @"main_local_phone", @"main_local_music"];
+    self.mainTitleArray = @[@"本地文件", @"照片库", @"录音功能", @"音频截取"];
     [self.menuTableView reloadData];
 }
 
@@ -81,7 +83,7 @@ static NSString *pkMainViewTableViewCellIndentifier = @"pkMainViewTableViewCellI
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
-        PKLocalFileViewController *localFileViewController = [[PKLocalFileViewController alloc]init];
+        PKLocalFileViewController *localFileViewController = [[PKLocalFileViewController alloc] init];
         [self.navigationController pushViewController:localFileViewController animated:YES];
     }
     if (indexPath.row == 1) {
@@ -89,8 +91,12 @@ static NSString *pkMainViewTableViewCellIndentifier = @"pkMainViewTableViewCellI
         [self.navigationController pushViewController:frameViewController animated:YES];
     }
     if (indexPath.row == 2) {
-        PKFlexMainViewController *felxMainViewController = [[PKFlexMainViewController alloc]init];
-        [self.navigationController pushViewController:felxMainViewController animated:YES];
+        PKRecordViewController *recordViewController = [[PKRecordViewController alloc] init];
+        [self.navigationController pushViewController:recordViewController animated:YES];
+    }
+    if (indexPath.row == 3) {
+        AudioExportViewController *audioExportViewController = [[AudioExportViewController alloc] init];
+        [self.navigationController pushViewController:audioExportViewController animated:YES];
     }
 }
 

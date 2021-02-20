@@ -106,6 +106,8 @@
     // 取消监听Document目录的文件改动
     [[PKiTunesScanService sharedInstance] stopMonitoringDocument];
     [[NSNotificationCenter defaultCenter] removeObserver:pkFileScanNotificationDefine];
+    
+    [self.audioPlayer stop];
 }
 
 - (void)didReceiveMemoryWarning {
