@@ -62,8 +62,12 @@
     }
     
     AVAssetTrack *assetAudioTrack = nil;
+    AVAssetTrack *assetVideoTrack = nil;
     if ([self.asset tracksWithMediaType:AVMediaTypeAudio].count != 0) {
         assetAudioTrack = [[self.asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+    }
+    if ([self.asset tracksWithMediaType:AVMediaTypeVideo].count != 0) {
+        assetVideoTrack = [[self.asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
     }
     
     CMTime insertionPoint = kCMTimeZero;
@@ -71,6 +75,15 @@
     ///第一步
     ///创建composition插入Asset中的视频轨和音频轨
     self.composition = [[AVMutableComposition alloc]init];
+    ///处理视频
+    if (assetVideoTrack) {
+        AVMutableCompositionTrack *compositionVideoTrack = [self.composition addMutableTrackWithMediaType:AVMediaTypeVideo
+                                                                                         preferredTrackID:kCMPersistentTrackID_Invalid];
+        ///视频方向
+        [compositionVideoTrack setPreferredTransform:assetVideoTrack.preferredTransform];
+        ///把视频轨数据加到可变轨道中，并根据timeRange作剪裁
+        [compositionVideoTrack insertTimeRange:self.timeRang ofTrack:assetVideoTrack atTime:insertionPoint error:&err];
+    }
     ///处理音频
     if (assetAudioTrack) {
         AVMutableCompositionTrack *compositionAudioTrack = [self.composition addMutableTrackWithMediaType:AVMediaTypeAudio
@@ -79,7 +92,8 @@
         [compositionAudioTrack insertTimeRange:self.timeRang ofTrack:assetAudioTrack atTime:insertionPoint error:&err];
     }
     
-    self.exportSession = [[AVAssetExportSession alloc] initWithAsset:self.composition presetName:AVAssetExportPresetAppleM4A];
+    self.exportSession = [[AVAssetExportSession alloc] initWithAsset:self.asset presetName:AVAssetExportPresetAppleM4A];
+    self.exportSession.timeRange = self.timeRang;
     self.exportSession.outputURL = self.outputPath;
     self.exportSession.outputFileType = AVFileTypeAppleM4A;
     self.exportSession.shouldOptimizeForNetworkUse = YES;
@@ -100,11 +114,11 @@
                     break;
             }
             BOOL completed = [self.exportSession status] == AVAssetExportSessionStatusCompleted;
-            BOOL fileExists =  [fileManager fileExistsAtPath:self.outputPath.path];
+            BOOL fileExists = [fileManager fileExistsAtPath:self.outputPath.path];
             if (completed && fileExists) {
                 if (handler) handler(self.outputPath);
             } else {
-                if (error) error(nil);
+                if (error) error(self.exportSession.error);
             }
         });
     }];

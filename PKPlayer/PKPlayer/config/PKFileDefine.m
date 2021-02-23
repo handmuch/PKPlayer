@@ -20,6 +20,8 @@ static NSString *const exifSuffix = @"exif";
 static NSString *const icoSuffix = @"ico";
 static NSString *const icnsSuffix = @"icns";
 
+static NSString *const mp4Suffix = @"mp4";
+
 @implementation PKFileDefine
 
 + (BOOL)isImageFile:(NSString *)fileName {
@@ -43,6 +45,28 @@ static NSString *const icnsSuffix = @"icns";
     }
     
     return NO;
+}
+
++ (BOOL)isVideoFile:(NSString *)fileName {
+    if (fileName.length <= 0) {
+        return NO;
+    }
+    
+    if ([fileName hasSuffix:mp4Suffix]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+///片头曲地址
++ (NSString *)exportOpMusicfileName:(NSString *)fileName {
+    return [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"op.m4a"]];
+}
+
+///片尾曲地址
++ (NSString *)exportEdMusicfileName:(NSString *)fileName {
+    return [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"ed.m4a"]];
 }
 
 @end

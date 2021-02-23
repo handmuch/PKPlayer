@@ -38,6 +38,8 @@
 		D72775842071C3280078CB44 /* PKFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72775832071C3280078CB44 /* PKFileModel.m */; };
 		D731C2C7228908EC007FC473 /* PKSpectrumView.m in Sources */ = {isa = PBXBuildFile; fileRef = D731C2C6228908EA007FC473 /* PKSpectrumView.m */; };
 		D7662F2725D235790044EBEC /* AuidoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7662F2625D235790044EBEC /* AuidoTableViewCell.m */; };
+		D7662F8D25E392530044EBEC /* TVBAudioPlayService.m in Sources */ = {isa = PBXBuildFile; fileRef = D7662F8B25E392520044EBEC /* TVBAudioPlayService.m */; };
+		D7662F9325E39CD40044EBEC /* PKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D7662F9225E39CD40044EBEC /* PKSlider.m */; };
 		D779807E25D22D4300375EE4 /* AudioExportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D779807D25D22D4300375EE4 /* AudioExportViewController.m */; };
 		D779808725D22DB300375EE4 /* TVBVideoMusicExportSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D779808625D22DB000375EE4 /* TVBVideoMusicExportSession.m */; };
 		D77C516320F23B42005CC2A3 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77C515C20F23B42005CC2A3 /* libavutil.a */; };
@@ -138,6 +140,10 @@
 		D731C2C6228908EA007FC473 /* PKSpectrumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKSpectrumView.m; sourceTree = "<group>"; };
 		D7662F2525D235790044EBEC /* AuidoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuidoTableViewCell.h; sourceTree = "<group>"; };
 		D7662F2625D235790044EBEC /* AuidoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuidoTableViewCell.m; sourceTree = "<group>"; };
+		D7662F8B25E392520044EBEC /* TVBAudioPlayService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVBAudioPlayService.m; sourceTree = "<group>"; };
+		D7662F8C25E392530044EBEC /* TVBAudioPlayService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVBAudioPlayService.h; sourceTree = "<group>"; };
+		D7662F9125E39CD40044EBEC /* PKSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKSlider.h; sourceTree = "<group>"; };
+		D7662F9225E39CD40044EBEC /* PKSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKSlider.m; sourceTree = "<group>"; };
 		D779807C25D22D4300375EE4 /* AudioExportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioExportViewController.h; sourceTree = "<group>"; };
 		D779807D25D22D4300375EE4 /* AudioExportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioExportViewController.m; sourceTree = "<group>"; };
 		D779808525D22DAB00375EE4 /* TVBVideoMusicExportSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVBVideoMusicExportSession.h; sourceTree = "<group>"; };
@@ -548,8 +554,12 @@
 				D779807D25D22D4300375EE4 /* AudioExportViewController.m */,
 				D7662F2525D235790044EBEC /* AuidoTableViewCell.h */,
 				D7662F2625D235790044EBEC /* AuidoTableViewCell.m */,
+				D7662F9125E39CD40044EBEC /* PKSlider.h */,
+				D7662F9225E39CD40044EBEC /* PKSlider.m */,
 				D779808525D22DAB00375EE4 /* TVBVideoMusicExportSession.h */,
 				D779808625D22DB000375EE4 /* TVBVideoMusicExportSession.m */,
+				D7662F8C25E392530044EBEC /* TVBAudioPlayService.h */,
+				D7662F8B25E392520044EBEC /* TVBAudioPlayService.m */,
 			);
 			path = "音频截取";
 			sourceTree = "<group>";
@@ -1021,6 +1031,7 @@
 				D7D53E6924FF7A8200CD65EC /* LFLiveAudioConfiguration.m in Sources */,
 				D70CD2112230CDE10088257C /* PKRealTimeAnalyzer.mm in Sources */,
 				D72775842071C3280078CB44 /* PKFileModel.m in Sources */,
+				D7662F8D25E392530044EBEC /* TVBAudioPlayService.m in Sources */,
 				D7BC91B620A9396E008044AE /* PKiTunesScanService.m in Sources */,
 				D7E3111024D977780086D68D /* PKRecordViewController.m in Sources */,
 				D7BC9198209C8E47008044AE /* PKLocalFileCollectionViewCell.m in Sources */,
@@ -1028,6 +1039,7 @@
 				D7E3111324D980490086D68D /* PKAudioRecordService.m in Sources */,
 				D727756A206CEE9B0078CB44 /* PKBaseViewController.m in Sources */,
 				D731C2C7228908EC007FC473 /* PKSpectrumView.m in Sources */,
+				D7662F9325E39CD40044EBEC /* PKSlider.m in Sources */,
 				D7277580206E239D0078CB44 /* PKNotificationDefine.m in Sources */,
 				D7D7CA7C236FFC6700AEA417 /* PKFlexMainViewController.m in Sources */,
 				D7277577206E0E0C0078CB44 /* PKLocalFileViewController.m in Sources */,

@@ -293,17 +293,17 @@ static OSStatus handleOutputBuffer(void *inRefCon,
 //    {
         for (int i = 0; i < ioData -> mNumberBuffers; i++) {
             @autoreleasepool {
-                AudioBuffer buffer = ioData -> mBuffers[i];
-                NSData *pcmBlock = [source getPlayFrame:buffer.mDataByteSize];
-                if (pcmBlock && pcmBlock.length) {
-                    UInt32 size = (UInt32)MIN(buffer.mDataByteSize, [pcmBlock length]);
-                    memcpy(buffer.mData, [pcmBlock bytes], size);
-                    buffer.mDataByteSize = size;
-                    //HMLogDebug(LogModuleAudio, @"AudioUnitRender pcm data has filled");
-                } else {
-                    buffer.mDataByteSize = 0;
-                    *ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
-                }
+//                AudioBuffer buffer = ioData -> mBuffers[i];
+//                NSData *pcmBlock = [source getPlayFrame:buffer.mDataByteSize];
+//                if (pcmBlock && pcmBlock.length) {
+//                    UInt32 size = (UInt32)MIN(buffer.mDataByteSize, [pcmBlock length]);
+//                    memcpy(buffer.mData, [pcmBlock bytes], size);
+//                    buffer.mDataByteSize = size;
+//                    //HMLogDebug(LogModuleAudio, @"AudioUnitRender pcm data has filled");
+//                } else {
+//                    buffer.mDataByteSize = 0;
+//                    *ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
+//                }
             } // end pool
         } // end for
 //    } // end if

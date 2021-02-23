@@ -53,6 +53,9 @@
                     }
                     fileModel.fileReadType = PKLocalFileReadTypePhoto;
                 }
+                if ([PKFileDefine isVideoFile:file.pathExtension]) {
+                    fileModel.fileReadType = PKLocalFileReadTypeVideo;
+                }
                 
                 fileModel.fileName = file;
                 fileModel.extName = file.pathExtension;

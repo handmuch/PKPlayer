@@ -15,7 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) PKFileModel *fileModel;
 
-@property (nonatomic, copy) 
+@property (nonatomic, copy) void(^videoOpMusicPlay)(PKFileModel *fileModel);
+
+@property (nonatomic, copy) void(^videoEdMusicPlay)(PKFileModel *fileModel);
+
+- (void)playAudioWithUrl:(NSURL *)url;
 
 @end
 
