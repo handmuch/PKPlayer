@@ -12,6 +12,8 @@
 #import "PKFrameViewController.h"
 #import "PKRecordViewController.h"
 #import "AudioExportViewController.h"
+#import "PKInterViewTestViewController.h"
+#import "PKOpenGLViewController.h"
 
 #import "PKMainViewTableViewCell.h"
 
@@ -40,8 +42,8 @@ static NSString *pkMainViewTableViewCellIndentifier = @"pkMainViewTableViewCellI
 
 - (void)initData {
     
-    self.mainImageNameArray = @[@"main_local_file", @"main_local_image",  @"main_local_phone", @"main_local_music"];
-    self.mainTitleArray = @[@"本地文件", @"照片库", @"录音功能", @"音频截取"];
+    self.mainImageNameArray = @[@"main_local_file", @"main_local_image",  @"main_local_phone", @"main_local_music", @"main_local_file", @"main_local_file"];
+    self.mainTitleArray = @[@"本地文件", @"照片库", @"录音功能", @"音频截取", @"Interview", @"OpenGL代码示例"];
     [self.menuTableView reloadData];
 }
 
@@ -97,6 +99,14 @@ static NSString *pkMainViewTableViewCellIndentifier = @"pkMainViewTableViewCellI
     if (indexPath.row == 3) {
         AudioExportViewController *audioExportViewController = [[AudioExportViewController alloc] init];
         [self.navigationController pushViewController:audioExportViewController animated:YES];
+    }
+    if (indexPath.row == 4) {
+        PKInterViewTestViewController *interViewTestViewController = [[PKInterViewTestViewController alloc] init];
+        [self.navigationController pushViewController:interViewTestViewController animated:YES];
+    }
+    if (indexPath.row == 5) {
+        PKOpenGLViewController *openGLViewController = [[PKOpenGLViewController alloc] init];
+        [self.navigationController pushViewController:openGLViewController animated:YES];
     }
 }
 
