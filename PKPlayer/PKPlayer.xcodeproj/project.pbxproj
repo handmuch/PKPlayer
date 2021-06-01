@@ -37,10 +37,15 @@
 		D7277580206E239D0078CB44 /* PKNotificationDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = D727757F206E239D0078CB44 /* PKNotificationDefine.m */; };
 		D72775842071C3280078CB44 /* PKFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72775832071C3280078CB44 /* PKFileModel.m */; };
 		D731C2C7228908EC007FC473 /* PKSpectrumView.m in Sources */ = {isa = PBXBuildFile; fileRef = D731C2C6228908EA007FC473 /* PKSpectrumView.m */; };
+		D75699022660F3A500E966F4 /* PKOpenGLSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75699012660F3A500E966F4 /* PKOpenGLSLViewController.m */; };
+		D756990B2660F72100E966F4 /* PKGLSL.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D75699092660F72100E966F4 /* PKGLSL.vsh */; };
+		D756990C2660F72100E966F4 /* PKGLSL.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D756990A2660F72100E966F4 /* PKGLSL.fsh */; };
 		D7662F2725D235790044EBEC /* AuidoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7662F2625D235790044EBEC /* AuidoTableViewCell.m */; };
 		D7662F8D25E392530044EBEC /* TVBAudioPlayService.m in Sources */ = {isa = PBXBuildFile; fileRef = D7662F8B25E392520044EBEC /* TVBAudioPlayService.m */; };
 		D7662F9325E39CD40044EBEC /* PKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D7662F9225E39CD40044EBEC /* PKSlider.m */; };
 		D7716FF22652650A00D10D92 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7716FF12652650A00D10D92 /* 0.jpg */; };
+		D77170072654E81B00D10D92 /* PKMetalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77170062654E81B00D10D92 /* PKMetalImageViewController.m */; };
+		D771715C265BC79300D10D92 /* default.metal in Sources */ = {isa = PBXBuildFile; fileRef = D771715B265BC79300D10D92 /* default.metal */; };
 		D779807E25D22D4300375EE4 /* AudioExportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D779807D25D22D4300375EE4 /* AudioExportViewController.m */; };
 		D779808725D22DB300375EE4 /* TVBVideoMusicExportSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D779808625D22DB000375EE4 /* TVBVideoMusicExportSession.m */; };
 		D77C516320F23B42005CC2A3 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77C515C20F23B42005CC2A3 /* libavutil.a */; };
@@ -142,6 +147,10 @@
 		D72775832071C3280078CB44 /* PKFileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFileModel.m; sourceTree = "<group>"; };
 		D731C2C5228908EA007FC473 /* PKSpectrumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKSpectrumView.h; sourceTree = "<group>"; };
 		D731C2C6228908EA007FC473 /* PKSpectrumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKSpectrumView.m; sourceTree = "<group>"; };
+		D75699002660F3A500E966F4 /* PKOpenGLSLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKOpenGLSLViewController.h; sourceTree = "<group>"; };
+		D75699012660F3A500E966F4 /* PKOpenGLSLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKOpenGLSLViewController.m; sourceTree = "<group>"; };
+		D75699092660F72100E966F4 /* PKGLSL.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PKGLSL.vsh; sourceTree = "<group>"; };
+		D756990A2660F72100E966F4 /* PKGLSL.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PKGLSL.fsh; sourceTree = "<group>"; };
 		D7662F2525D235790044EBEC /* AuidoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuidoTableViewCell.h; sourceTree = "<group>"; };
 		D7662F2625D235790044EBEC /* AuidoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuidoTableViewCell.m; sourceTree = "<group>"; };
 		D7662F8B25E392520044EBEC /* TVBAudioPlayService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVBAudioPlayService.m; sourceTree = "<group>"; };
@@ -149,6 +158,9 @@
 		D7662F9125E39CD40044EBEC /* PKSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKSlider.h; sourceTree = "<group>"; };
 		D7662F9225E39CD40044EBEC /* PKSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKSlider.m; sourceTree = "<group>"; };
 		D7716FF12652650A00D10D92 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		D77170052654E81B00D10D92 /* PKMetalImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKMetalImageViewController.h; sourceTree = "<group>"; };
+		D77170062654E81B00D10D92 /* PKMetalImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKMetalImageViewController.m; sourceTree = "<group>"; };
+		D771715B265BC79300D10D92 /* default.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = default.metal; sourceTree = "<group>"; };
 		D779807C25D22D4300375EE4 /* AudioExportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioExportViewController.h; sourceTree = "<group>"; };
 		D779807D25D22D4300375EE4 /* AudioExportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioExportViewController.m; sourceTree = "<group>"; };
 		D779808525D22DAB00375EE4 /* TVBVideoMusicExportSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVBVideoMusicExportSession.h; sourceTree = "<group>"; };
@@ -574,6 +586,16 @@
 			path = mediaSource;
 			sourceTree = "<group>";
 		};
+		D77170042654E7B700D10D92 /* Metal-Image */ = {
+			isa = PBXGroup;
+			children = (
+				D771715B265BC79300D10D92 /* default.metal */,
+				D77170052654E81B00D10D92 /* PKMetalImageViewController.h */,
+				D77170062654E81B00D10D92 /* PKMetalImageViewController.m */,
+			);
+			path = "Metal-Image";
+			sourceTree = "<group>";
+		};
 		D779807B25D22CE100375EE4 /* 音频截取 */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +809,7 @@
 			children = (
 				D7B758B426522F3D0021D820 /* PKOpenGLViewController.h */,
 				D7B758B526522F3D0021D820 /* PKOpenGLViewController.m */,
+				D77170042654E7B700D10D92 /* Metal-Image */,
 				D7B758C02652549D0021D820 /* OpenGL-Image */,
 			);
 			path = OpenGL;
@@ -797,6 +820,10 @@
 			children = (
 				D7B758BA265252CA0021D820 /* PKOpenGLKitImageViewController.h */,
 				D7B758BB265252CA0021D820 /* PKOpenGLKitImageViewController.m */,
+				D75699002660F3A500E966F4 /* PKOpenGLSLViewController.h */,
+				D75699012660F3A500E966F4 /* PKOpenGLSLViewController.m */,
+				D756990A2660F72100E966F4 /* PKGLSL.fsh */,
+				D75699092660F72100E966F4 /* PKGLSL.vsh */,
 			);
 			path = "OpenGL-Image";
 			sourceTree = "<group>";
@@ -1003,8 +1030,10 @@
 				D7716FF22652650A00D10D92 /* 0.jpg in Resources */,
 				D7D7CA88237154D900AEA417 /* system.style in Resources */,
 				D7D7CA86237151A400AEA417 /* FrameVC.xml in Resources */,
+				D756990B2660F72100E966F4 /* PKGLSL.vsh in Resources */,
 				D7D7CA8E237158AA00AEA417 /* PKFlexMainViewController.xml in Resources */,
 				D7277520206C82210078CB44 /* LaunchScreen.storyboard in Resources */,
+				D756990C2660F72100E966F4 /* PKGLSL.fsh in Resources */,
 				D727751D206C82210078CB44 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1100,7 +1129,10 @@
 				D7277571206D28140078CB44 /* PKMainViewTableViewCell.m in Sources */,
 				D779808725D22DB300375EE4 /* TVBVideoMusicExportSession.m in Sources */,
 				D727756E206D03290078CB44 /* PKMainViewController.m in Sources */,
+				D771715C265BC79300D10D92 /* default.metal in Sources */,
+				D77170072654E81B00D10D92 /* PKMetalImageViewController.m in Sources */,
 				D7BC91B920A94322008044AE /* PKFileDefine.m in Sources */,
+				D75699022660F3A500E966F4 /* PKOpenGLSLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

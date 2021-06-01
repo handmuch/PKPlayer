@@ -54,7 +54,7 @@ typedef struct {
     //创建上下文，使用openGL-ES 2.0
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     //创建顶点数组
-    self.vertices = malloc(sizeof(SenceVertex));
+    self.vertices = malloc(sizeof(SenceVertex) * 4);
     
     self.vertices[0] = (SenceVertex){{-1, 1, 0}, {0, 1}};   // 左上角
     self.vertices[1] = (SenceVertex){{-1, -1, 0}, {0, 0}};  // 左下角

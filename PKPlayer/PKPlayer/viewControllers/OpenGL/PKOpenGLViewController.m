@@ -8,6 +8,9 @@
 
 #import "PKOpenGLViewController.h"
 #import "PKOpenGLKitImageViewController.h"
+#import "PKOpenGLSLViewController.h"
+
+#import "PKMetalImageViewController.h"
 
 //views
 #import "PKMainViewTableViewCell.h"
@@ -25,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.exampleTitleArray = @[@"OpenGL渲染图片"];
+    self.exampleTitleArray = @[@"OpenGL渲染图片", @"OpenGL-GLSL渲染图片", @"Metal渲染图片"];
     [self setupUI];
 }
 
@@ -65,6 +68,14 @@
     if (indexPath.row == 0) {
         PKOpenGLKitImageViewController *openGLKitImageVC = [[PKOpenGLKitImageViewController alloc] init];
         [self.navigationController pushViewController:openGLKitImageVC animated:YES];
+    }
+    if (indexPath.row == 1) {
+        PKOpenGLSLViewController *openGLSLVC = [[PKOpenGLSLViewController alloc] init];
+        [self.navigationController pushViewController:openGLSLVC animated:YES];
+    }
+    if (indexPath.row == 2) {
+        PKMetalImageViewController *metalImageVC = [[PKMetalImageViewController alloc] init];
+        [self.navigationController pushViewController:metalImageVC animated:YES];
     }
 }
 
